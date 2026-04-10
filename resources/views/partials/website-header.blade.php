@@ -3,13 +3,13 @@
         <a href="{{ route('home') }}" class="logo">
             <img
                 class="hide-sticky"
-                src="{{ $setting->logo_url ?? asset('inc/assets/images/logo-dark.png') }}"
-                alt="{{ $setting->site_name ?? 'Logo' }}"
+                src="{{ asset('inc/assets/images/logo-dark.png') }}"
+                alt="{{ $setting->site_name ?? 'McMupah' }}"
             />
             <img
                 class="show-sticky"
-                src="{{ $setting->logo_url ?? asset('inc/assets/images/logo-white.png') }}"
-                alt="{{ $setting->site_name ?? 'Logo' }}"
+                src="{{ asset('inc/assets/images/logo-white.png') }}"
+                alt="{{ $setting->site_name ?? 'McMupah' }}"
             />
         </a>
 
@@ -24,7 +24,7 @@
                         <a href="{{ route('about') }}">About</a>
                     </li>
 
-                    <li class="menu-item menu-item-has-children">
+                    <li class="menu-item menu-item-has-children services-dropdown">
                         <a href="{{ route('services') }}">
                             Services
                             <div class="icon">
@@ -35,11 +35,41 @@
                         </a>
 
                         <ul class="sub-menu">
-                            @foreach($navbarServices as $service)
-                                <li class="menu-item">
-                                    <a href="{{ route('services') }}#service-{{ $service->slug }}">{{ $service->title }}</a>
-                                </li>
-                            @endforeach
+                            <li class="menu-item">
+                                <a href="{{ route('services.show', 'branding-large-format-printing') }}">
+                                    Branding / Large Format Printing
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('services.show', 'promotional-materials') }}">
+                                    Promotional Materials
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('services.show', 'corporate-gifts') }}">
+                                    Corporate Gifts
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('services.show', 'digital-marketing') }}">
+                                    Digital Marketing
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('services.show', 'graphic-designing') }}">
+                                    Graphic Designing
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('services.show', 'social-media-management') }}">
+                                    Social Media Management
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="{{ route('services.show', 'business-services') }}">
+                                    Business Services
+                                </a>
+                            </li>
                         </ul>
                     </li>
 
@@ -63,8 +93,8 @@
                         <div class="hamburger-content-header">
                             <a href="{{ route('home') }}" class="logo">
                                 <img
-                                    src="{{ $setting->logo_url ?? asset('inc/assets/images/logo-white.png') }}"
-                                    alt="{{ $setting->site_name ?? 'Logo' }}"
+                                    src="{{ asset('inc/assets/images/logo-white.png') }}"
+                                    alt="{{ $setting->site_name ?? 'McMupah' }}"
                                 />
                             </a>
 
@@ -108,11 +138,41 @@
                                             </a>
                                         </li>
 
-                                        @foreach($navbarServices as $service)
-                                            <li class="menu-item">
-                                                <a href="{{ route('services') }}#service-{{ $service->slug }}">{{ $service->title }}</a>
-                                            </li>
-                                        @endforeach
+                                        <li class="menu-item">
+                                            <a href="{{ route('services.show', 'branding-large-format-printing') }}">
+                                                Branding / Large Format Printing
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="{{ route('services.show', 'promotional-materials') }}">
+                                                Promotional Materials
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="{{ route('services.show', 'corporate-gifts') }}">
+                                                Corporate Gifts
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="{{ route('services.show', 'digital-marketing') }}">
+                                                Digital Marketing
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="{{ route('services.show', 'graphic-designing') }}">
+                                                Graphic Designing
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="{{ route('services.show', 'social-media-management') }}">
+                                                Social Media Management
+                                            </a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a href="{{ route('services.show', 'business-services') }}">
+                                                Business Services
+                                            </a>
+                                        </li>
                                     </ul>
                                 </li>
 
@@ -172,7 +232,6 @@
                                     </li>
                                 @endif
                             </ul>
-
                             <p class="copy-right">@ Copyright {{ date('Y') }}</p>
                         </div>
                     </div>
