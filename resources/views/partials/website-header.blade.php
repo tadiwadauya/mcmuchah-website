@@ -1,16 +1,28 @@
-<header class="header home-4-header sticky-nav">
+@php
+    $isHomePage = request()->routeIs('home');
+@endphp
+
+<header class="header {{ $isHomePage ? 'home-4-header sticky-nav home-navbar' : 'sticky-nav inner-navbar is-fixed' }}">
     <div class="header-wrapper">
         <a href="{{ route('home') }}" class="logo">
-            <img
-                class="hide-sticky"
-                src="{{ asset('inc/assets/images/logo-dark.png') }}"
-                alt="{{ $setting->site_name ?? 'McMupah' }}"
-            />
-            <img
-                class="show-sticky"
-                src="{{ asset('inc/assets/images/logo-white.png') }}"
-                alt="{{ $setting->site_name ?? 'McMupah' }}"
-            />
+            @if($isHomePage)
+                <img
+                    class="hide-sticky"
+                    src="{{ asset('inc/assets/images/logo-dark.png') }}"
+                    alt="{{ $setting->site_name ?? 'McMupah' }}"
+                />
+                <img
+                    class="show-sticky"
+                    src="{{ asset('inc/assets/images/logo-white.png') }}"
+                    alt="{{ $setting->site_name ?? 'McMupah' }}"
+                />
+            @else
+                <img
+                    class="always-logo"
+                    src="{{ asset('inc/assets/images/logo-white.png') }}"
+                    alt="{{ $setting->site_name ?? 'McMupah' }}"
+                />
+            @endif
         </a>
 
         <div class="header-inner-wrapper">
@@ -138,41 +150,13 @@
                                             </a>
                                         </li>
 
-                                        <li class="menu-item">
-                                            <a href="{{ route('services.show', 'branding-large-format-printing') }}">
-                                                Branding / Large Format Printing
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="{{ route('services.show', 'promotional-materials') }}">
-                                                Promotional Materials
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="{{ route('services.show', 'corporate-gifts') }}">
-                                                Corporate Gifts
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="{{ route('services.show', 'digital-marketing') }}">
-                                                Digital Marketing
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="{{ route('services.show', 'graphic-designing') }}">
-                                                Graphic Designing
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="{{ route('services.show', 'social-media-management') }}">
-                                                Social Media Management
-                                            </a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="{{ route('services.show', 'business-services') }}">
-                                                Business Services
-                                            </a>
-                                        </li>
+                                        <li class="menu-item"><a href="{{ route('services.show', 'branding-large-format-printing') }}">Branding / Large Format Printing</a></li>
+                                        <li class="menu-item"><a href="{{ route('services.show', 'promotional-materials') }}">Promotional Materials</a></li>
+                                        <li class="menu-item"><a href="{{ route('services.show', 'corporate-gifts') }}">Corporate Gifts</a></li>
+                                        <li class="menu-item"><a href="{{ route('services.show', 'digital-marketing') }}">Digital Marketing</a></li>
+                                        <li class="menu-item"><a href="{{ route('services.show', 'graphic-designing') }}">Graphic Designing</a></li>
+                                        <li class="menu-item"><a href="{{ route('services.show', 'social-media-management') }}">Social Media Management</a></li>
+                                        <li class="menu-item"><a href="{{ route('services.show', 'business-services') }}">Business Services</a></li>
                                     </ul>
                                 </li>
 

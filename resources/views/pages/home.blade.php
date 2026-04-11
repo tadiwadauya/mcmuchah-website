@@ -83,14 +83,28 @@
 
                         <div class="about-cards-block">
                             <div class="about-card">
-                                <h2 class="about-card__title">Vision</h2>
+                                <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+                                    <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; background:#0f766e; color:#fff;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" style="width:18px; height:18px; fill:currentColor;">
+                                            <path d="M287.9 17.8L354 150.2l145.9 21.2c26.2 3.8 36.7 36 17.7 54.6L412.1 329.9l24.9 145.3c4.5 26.1-23 46-46.4 33.7L288 439.6 185.4 508.9c-23.4 12.3-50.9-7.6-46.4-33.7l24.9-145.3L58.4 226c-19-18.6-8.5-50.8 17.7-54.6L222 150.2 288.1 17.8c11.7-23.6 45.5-23.9 57.2 0z"/>
+                                        </svg>
+                                    </span>
+                                    <h2 class="about-card__title" style="margin:0;">Vision</h2>
+                                </div>
                                 <div>
                                     {!! $blocks['home_vision']->body ?? '<p>Defining brands, creating value, and inspiring lives.</p>' !!}
                                 </div>
                             </div>
 
                             <div class="about-card">
-                                <h2 class="about-card__title">Mission</h2>
+                                <div style="display:flex; align-items:center; gap:12px; margin-bottom:10px;">
+                                    <span style="display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; border-radius:50%; background:#1d4ed8; color:#fff;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:18px; height:18px; fill:currentColor;">
+                                            <path d="M256 0C167.6 0 96 71.6 96 160c0 35.3 11.4 67.9 30.8 94.3L246.5 472c4.5 8.2 14.1 13.3 23.5 13.3s19-5.1 23.5-13.3l119.7-217.7C404.6 227.9 416 195.3 416 160 416 71.6 344.4 0 256 0zm0 224c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/>
+                                        </svg>
+                                    </span>
+                                    <h2 class="about-card__title" style="margin:0;">Mission</h2>
+                                </div>
                                 <div>
                                     {!! $blocks['home_mission']->body ?? '<p>To provide effective branding solutions and quality products and services affordably in a fast-paced business environment.</p>' !!}
                                 </div>
@@ -257,6 +271,16 @@
                                         style="display:flex; align-items:center; gap:14px;"
                                         id="service-{{ $service->slug }}"
                                     >
+                                        <span style="display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.14); color:#fff; flex-shrink:0;">
+                                            @if($service->icon)
+                                                {!! $service->icon !!}
+                                            @else
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:16px; height:16px; fill:currentColor;">
+                                                    <path d="M502.3 190.8l-192-160c-14.8-12.3-36.3-10.4-48.7 4.3L215.4 91.6l-59.9-50c-14.8-12.3-36.4-10.3-48.7 4.3L9.7 165c-12.3 14.8-10.3 36.4 4.4 48.7l59.9 50L9.7 341c-12.3 14.8-10.3 36.4 4.4 48.7l97.1 80.9c14.8 12.3 36.4 10.3 48.7-4.4l64.3-77.2 59.9 50c14.8 12.3 36.4 10.3 48.7-4.4l97.1-116.4c12.3-14.8 10.3-36.4-4.4-48.7l-59.9-50 64.3-77.2c12.3-14.8 10.3-36.4-4.4-48.7z"/>
+                                                </svg>
+                                            @endif
+                                        </span>
+
                                         <div style="font-size:17px; font-weight:600;">
                                             {{ $service->title }}
                                         </div>
@@ -317,7 +341,18 @@
                                                 <div class="tab-pane-inner">
                                                     <div class="tab-panel-wrapper">
                                                         <div class="pane-content-block">
-                                                            <h2 class="primary--heading">{{ $groupName }}</h2>
+                                                            <div style="display:flex; align-items:center; gap:14px; margin-bottom:12px;">
+                                                                <span style="display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:#0f766e; color:#fff; flex-shrink:0;">
+                                                                    @if($firstItem && $firstItem->icon)
+                                                                        {!! $firstItem->icon !!}
+                                                                    @else
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:18px; height:18px; fill:currentColor;">
+                                                                            <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zM96 128H416c17.7 0 32 14.3 32 32v48H64V160c0-17.7 14.3-32 32-32zm352 112v176c0 26.5-21.5 48-48 48H112c-26.5 0-48-21.5-48-48V240h384z"/>
+                                                                        </svg>
+                                                                    @endif
+                                                                </span>
+                                                                <h2 class="primary--heading" style="margin:0;">{{ $groupName }}</h2>
+                                                            </div>
 
                                                             @if($firstItem && $firstItem->description)
                                                                 <div style="margin-bottom: 16px;">

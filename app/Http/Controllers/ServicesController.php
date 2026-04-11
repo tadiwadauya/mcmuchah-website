@@ -58,9 +58,37 @@ class ServicesController extends Controller
     {
         $setting = Setting::current();
 
+        $printingServices = Service::where('is_active', true)
+            ->where('category', 'printing')
+            ->orderBy('sort_order')
+            ->get();
+
+        $promoServices = Service::where('is_active', true)
+            ->where('category', 'promo')
+            ->orderBy('sort_order')
+            ->get();
+
+        $digitalServices = Service::where('is_active', true)
+            ->where('category', 'digital')
+            ->orderBy('sort_order')
+            ->get();
+
+        $otherServices = Service::where('is_active', true)
+            ->where('category', 'other')
+            ->orderBy('sort_order')
+            ->get()
+            ->groupBy('group_name');
+
         $servicePages = $this->servicePages;
 
-        return view('pages.services', compact('setting', 'servicePages'));
+        return view('pages.services', compact(
+            'setting',
+            'printingServices',
+            'promoServices',
+            'digitalServices',
+            'otherServices',
+            'servicePages'
+        ));
     }
 
     public function show(string $slug): View

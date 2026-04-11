@@ -23,37 +23,165 @@
         }
 
         /* ---------------------------
-           LOGO SWITCH
+           BASE HEADER / LOGO
         ---------------------------- */
         .header .logo {
             position: relative;
             display: inline-flex;
             align-items: center;
+            line-height: 1;
+            z-index: 20;
         }
 
         .header .logo img {
-            max-height: 60px;
+            display: block;
             width: auto;
+            object-fit: contain;
         }
 
         .header .logo .show-sticky {
             display: none;
         }
 
-        .header.home-4-header .logo .hide-sticky {
+        .header .logo .always-logo {
             display: inline-block;
         }
 
-        .header.home-4-header.is-fixed .logo .hide-sticky,
-        .header.home-4-header.active .logo .hide-sticky,
-        .header.home-4-header.sticky .logo .hide-sticky {
+        .header .header-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .header-inner-wrapper {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ---------------------------
+           HOME NAVBAR
+        ---------------------------- */
+        .home-navbar .header-wrapper {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .home-navbar .logo {
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .home-navbar .logo img {
+            max-height: 58px;
+        }
+
+        .home-navbar .header-inner-wrapper {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .home-navbar .navigation-menu.desktop > .menu-item > a,
+        .home-navbar .navigation-menu.desktop > .menu-item > a:visited {
+            color: #111827;
+            text-decoration: none;
+        }
+
+        .home-navbar.is-fixed .header-wrapper,
+        .home-navbar.active .header-wrapper,
+        .home-navbar.sticky .header-wrapper {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        .home-navbar.is-fixed .logo,
+        .home-navbar.active .logo,
+        .home-navbar.sticky .logo {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            top: 0 !important;
+            transform: none !important;
+        }
+
+        .home-navbar.is-fixed .logo img,
+        .home-navbar.active .logo img,
+        .home-navbar.sticky .logo img {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            top: 0 !important;
+            transform: none !important;
+            max-height: 58px;
+        }
+
+        .home-navbar.is-fixed .header-inner-wrapper,
+        .home-navbar.active .header-inner-wrapper,
+        .home-navbar.sticky .header-inner-wrapper {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .home-navbar.is-fixed .logo .hide-sticky,
+        .home-navbar.active .logo .hide-sticky,
+        .home-navbar.sticky .logo .hide-sticky {
             display: none;
         }
 
-        .header.home-4-header.is-fixed .logo .show-sticky,
-        .header.home-4-header.active .logo .show-sticky,
-        .header.home-4-header.sticky .logo .show-sticky {
+        .home-navbar.is-fixed .logo .show-sticky,
+        .home-navbar.active .logo .show-sticky,
+        .home-navbar.sticky .logo .show-sticky {
             display: inline-block;
+        }
+
+        .home-navbar.is-fixed .navigation-menu.desktop > .menu-item > a,
+        .home-navbar.active .navigation-menu.desktop > .menu-item > a,
+        .home-navbar.sticky .navigation-menu.desktop > .menu-item > a {
+            color: #ffffff !important;
+        }
+
+        /* ---------------------------
+           INNER NAVBAR
+        ---------------------------- */
+        .inner-navbar .header-wrapper {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .inner-navbar .logo {
+            height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .inner-navbar .logo img {
+            max-height: 58px;
+        }
+
+        .inner-navbar .header-inner-wrapper {
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+        }
+
+        .inner-navbar .navigation-menu.desktop > .menu-item > a,
+        .inner-navbar .navigation-menu.desktop > .menu-item > a:visited {
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
+        .inner-navbar .services-dropdown > a .icon svg,
+        .home-navbar .services-dropdown > a .icon svg {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
         }
 
         /* ---------------------------
@@ -68,24 +196,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .header .navigation-menu.desktop > .menu-item > a,
-        .header .navigation-menu.desktop > .menu-item > a:visited {
-            color: #111827;
-            text-decoration: none;
-        }
-
-        .header.home-4-header.is-fixed .navigation-menu.desktop > .menu-item > a,
-        .header.home-4-header.active .navigation-menu.desktop > .menu-item > a,
-        .header.home-4-header.sticky .navigation-menu.desktop > .menu-item > a {
-            color: #ffffff;
-        }
-
-        .header .navigation-menu.desktop .services-dropdown > a .icon svg {
-            width: 12px;
-            height: 12px;
-            fill: currentColor;
         }
 
         /* ---------------------------
@@ -142,7 +252,7 @@
         }
 
         /* ---------------------------
-           BASIC FORM STYLES
+           PAGE / CARD / FORM STYLES
         ---------------------------- */
         .card {
             background: #ffffff;
@@ -160,10 +270,16 @@
             cursor: pointer;
             font-size: 14px;
             font-weight: 600;
+            transition: all 0.2s ease;
         }
 
         .btn-success {
             background: #0f766e;
+            color: #ffffff;
+        }
+
+        .btn-success:hover {
+            background: #0b5f59;
             color: #ffffff;
         }
 
@@ -184,10 +300,19 @@
             border-radius: 10px;
             font-size: 14px;
             box-sizing: border-box;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            background: #ffffff;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #0f766e;
+            box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.12);
         }
 
         textarea.form-control {
             min-height: 130px;
+            resize: vertical;
         }
 
         .grid-2 {
@@ -207,9 +332,32 @@
             color: #166534;
         }
 
+        /* ---------------------------
+           MOBILE
+        ---------------------------- */
         @media (max-width: 991px) {
             .header .navigation-menu.desktop .menu-item-has-children > .sub-menu {
                 display: none !important;
+            }
+
+            .home-navbar .header-wrapper,
+            .inner-navbar .header-wrapper {
+                min-height: 78px;
+            }
+
+            .home-navbar .logo,
+            .inner-navbar .logo {
+                height: 78px;
+            }
+
+            .home-navbar .header-inner-wrapper,
+            .inner-navbar .header-inner-wrapper {
+                min-height: 78px;
+            }
+
+            .home-navbar .logo img,
+            .inner-navbar .logo img {
+                max-height: 50px;
             }
 
             .grid-2 {
@@ -245,6 +393,25 @@
 
     <script>
         new WOW().init();
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const header = document.querySelector('.home-navbar');
+
+            if (!header) {
+                return;
+            }
+
+            const toggleHeaderState = function () {
+                if (window.scrollY > 40) {
+                    header.classList.add('is-fixed');
+                } else {
+                    header.classList.remove('is-fixed');
+                }
+            };
+
+            toggleHeaderState();
+            window.addEventListener('scroll', toggleHeaderState);
+        });
     </script>
 
     @stack('scripts')
